@@ -140,14 +140,22 @@ a {
 /* card */
 .glass-card {
     color: var(--light);
-    background-color: linear-gradient(to top right,
-            rgba(255, 255, 255, 0.7),
-            rgba(255, 255, 255, 0.3));
+    background: linear-gradient(to top right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     width: 380px;
     margin: 20px;
     padding: 1.5rem;
-    box-shadow: 0 5px 25px rgba(0 0 0 / 10%);
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Updated shadow for glass effect */
+    backdrop-filter: blur(10px);
+    /* Apply a blur effect */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition */
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    /* Move card slightly upward on hover */
 }
 
 .card {
@@ -155,8 +163,16 @@ a {
     background-color: #fff;
     margin: 20px;
     padding: 1.5rem;
-    box-shadow: 0 5px 25px rgba(0 0 0 / 10%);
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Updated shadow for card */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Move card slightly upward on hover */
 }
 
 /* nav-bar */
@@ -164,75 +180,77 @@ a {
     position: fixed;
     top: 0;
     left: 0;
-    width: 20vw;
-    height: 100vh;
-    background: linear-gradient(240deg, rgba(58, 85, 118, 0.7) 10%, #2c2e44 70%);
-    box-shadow: 3px 5px 6px rgba(45, 55, 68, 0.3);
-    padding: 1.25rem 0.5rem 2rem 0.5rem;
-    z-index: 2;
-}
-
-.nav {
-    height: 100%;
+    width: 100%;
+    height: 60px;
+    /* Adjust height as needed */
+    background: rgba(255, 255, 255, 0.95);
+    /* Semi-transparent white background */
+    backdrop-filter: blur(10px);
+    /* Apply a blur effect */
+    z-index: 1000;
+    /* Ensure it's above other content */
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    /* //border-radius: 30px; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding-bottom: 48px;
+    /* Add a subtle shadow */
 }
 
 .logo {
-    padding: 2rem 2rem 1rem 2rem;
+    width: 40px;
+    /* Adjust logo size */
+    height: 40px;
+    margin-right: 20px;
 }
 
 .nav-links {
-    flex: 1;
-    margin-top: 2rem;
+    display: flex;
 }
 
 .nav-link {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
-    transition: 0.1s ease-in-out;
-    flex: 3;
-}
-
-.nav-icon {
-    font-size: 1.3rem;
-    margin-right: 1.3rem;
-    transition: 0.1s ease;
-}
-
-.nav-text {
-    font-weight: 500;
-    letter-spacing: 1px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-link:hover {
-    background: linear-gradient(190deg, rgb(240, 117, 199), rgba(178, 117, 240));
-    color: var(--dark);
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+}
+
+.nav-link.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Slightly darker background for active link */
+}
+
+.nav-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    transition: transform 0.3s;
 }
 
 .nav-link:hover .nav-icon {
-    transform: scale(1.1);
-}
-
-.active {
-    padding: 0.5rem;
-    background: linear-gradient(190deg, rgb(240, 117, 199), rgba(178, 117, 240));
-    color: var(--dark);
+    transform: scale(1.2);
+    /* Scale up icon on hover */
 }
 
 /* content */
 .content {
-    width: 80vw;
+    width: 90%;
     height: 100%;
     margin-left: auto;
 }
 
 .home {
-    padding: 0 2rem;
+    padding: 25px;
 }
 
 .home .glass-card {
@@ -241,7 +259,7 @@ a {
     margin: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 1rem;
 }
 
@@ -265,23 +283,28 @@ a {
 
 /* accordion */
 .accordion {
-    background: lightblue;
+    background: #f0f0f0;
+    /* Light background color */
     margin: 0 4.3rem 1rem 2rem;
     border-radius: 10px;
 }
 
 .accordion-button {
     padding: 0.8rem;
-    background: linear-gradient(to top right,
-            rgba(255, 255, 255, 0.1),
-            rgba(20, 92, 201, 0.3));
+    background: linear-gradient(to top right, rgba(255, 255, 255, 0.1), rgba(20, 92, 201, 0.3));
     position: relative;
     margin: 0;
     cursor: pointer;
-    box-shadow: 0 5px 25px rgba(0 0 0 / 20%);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    /* Slightly adjusted shadow */
     color: #222;
     border-radius: 10px;
-    display: block;
+    display: flex;
+    /* Align icon and text horizontally */
+    align-items: center;
+    /* Center vertically */
+    justify-content: space-between;
+    /* Space out icon and text */
     width: 100%;
     border: none;
     outline: none;
@@ -293,36 +316,28 @@ a {
 
 .accordion-button::after {
     content: "\25be";
-    right: 20px;
-    top: 20%;
     position: absolute;
-    transform: scale(2);
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     transition: 0.3s ease;
 }
 
 .accordion-content {
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
-    color: var(--semi-dark);
+    padding: 1rem 0.5rem;
+    color: #666;
+    /* Adjusted text color */
     display: none;
-    overflow: auto;
+    overflow: hidden;
+    /* Hide overflow content */
 }
 
-.accordion-content .modal-btn {
-    color: var(--link);
-    font-weight: 500;
-    text-decoration: underline;
-    margin-left: 1rem;
-    transition: 0.3s ease;
-}
-
-.accordion-content .modal-btn:hover {
-    opacity: 0.7;
+.accordion-content p {
+    margin: 0;
 }
 
 .accordion-button-active {
-    background: linear-gradient(to bottom left,
-            rgba(255, 255, 255, 0.1),
-            rgba(20, 92, 201, 0.3));
+    background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.1), rgba(20, 92, 201, 0.3));
 }
 
 .accordion-button-active::after {
@@ -331,6 +346,16 @@ a {
 
 .accordion-button-active+.accordion-content {
     display: block;
+}
+
+/* Hover effect */
+.accordion-button:hover {
+    background: linear-gradient(to top right, rgba(255, 255, 255, 0.3), rgba(20, 92, 201, 0.5));
+}
+
+/* Active state effect */
+.accordion-button-active:hover {
+    background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.3), rgba(20, 92, 201, 0.5));
 }
 
 /* card modal */
@@ -434,28 +459,32 @@ a {
 
 /* bg modal */
 #music-modal {
-    background: url(../images/modal-home-images/music.jpg);
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 #scene-modal {
-    background: url(../images/modal-home-images/scene.jpg);
+    background-color: #FFFFFF;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 * #breathe-modal {
-    background: url(../images/modal-home-images/breathe.jpg);
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 #ai-modal {
-    background: url(../images/modal-home-images/ai.jpg);
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -546,13 +575,32 @@ a {
 
 #music-body {
     font-family: "Poppins", sans-serif;
-    background: url(../images/backgrounds/music-bg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100%;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    height: 100vh;
+    /* Ensure full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    /* Text color */
 }
+
+#music-body h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#music-body p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 
 #music-body::before {
     content: "";
@@ -573,7 +621,7 @@ a {
 }
 
 .music {
-    width: 80vw;
+    width: 90%;
     height: 100%;
     margin-left: auto;
 }
@@ -587,9 +635,9 @@ a {
     position: fixed;
     left: 0;
     right: 0;
-    top: 0;
-    width: 80vw;
-    margin-left: 20vw;
+    top: 10;
+    width: 100%;
+    /* margin-left: 20vw; */
     align-items: center;
     justify-content: space-between;
     z-index: 999;
@@ -621,6 +669,7 @@ a {
     position: fixed;
     top: 3rem;
     z-index: 999;
+    padding-top: 16px;
 }
 
 .select-box .options-container {
@@ -700,85 +749,90 @@ a {
 
 /* music-cards */
 .music-card-container {
-    margin-top: 7rem;
+    margin-top: 8rem;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .music-box {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 5rem;
+    justify-content: center;
+    gap: 30px;
+    /* Adjust spacing between cards */
 }
 
 .music-content {
     margin: 1rem;
-    box-shadow: 0 0 3px rgba(60, 72, 88, 0.15);
-    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 15px;
-    position: relative;
+    overflow: hidden;
+    /* Hide overflowing content */
 }
 
 .music-content:hover {
-    box-shadow: 0 1.5rem 3rem rgba(60, 72, 88, 0.5);
+    transform: translateY(-5px);
+    /* Move card slightly upwards on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    /* Add more prominent shadow on hover */
 }
 
 .music-img {
     height: 270px;
-    width: 250px;
+    width: 100%;
     position: relative;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
+    /* Rounded corners only at the top */
     overflow: hidden;
 }
 
 .music-img img {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
     object-fit: cover;
-    transition: all 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .music-img::after {
     content: "";
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .music-img:hover::after {
     opacity: 1;
-    visibility: visible;
-}
-
-.music-img:hover img {
-    transform: scale(1.1);
 }
 
 .music-title {
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
-    position: absolute;
-    right: 0;
-    left: 0;
+    /* position: absolute; */
     bottom: 0;
+    left: 0;
+    right: 0;
     padding: 1rem;
-    border-radius: 15px;
+    border-radius: 0 0 15px 15px;
+    /* Rounded corners only at the bottom*/ 
+    transition: background-color 0.3s ease-in-out;
 }
 
 .music-title span {
     font-size: 1rem;
+    font-weight: bold;
 }
 
 .music-title .artist {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #f2f2f2;
 }
 
