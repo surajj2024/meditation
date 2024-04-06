@@ -87,12 +87,3 @@
 ![U matter](./markdown-images/mobile/mobile-hope.jpg)  
 ![U matter](./markdown-images/mobile/mobile-hope-conversation.jpg)
 
----
-
-## Visit U Matter [here](https://umatter.netlify.app/ "U Matter")
-
----
-
-#### design and develop by [**Jericho Bantiquete**](https://twitter.com/monciego)
-
-#### powered by HTML5, CSS3 and Vanilla JavaScript
